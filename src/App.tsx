@@ -38,7 +38,6 @@ const App: React.FC = () => {
     const filtered = products.filter(
       (product) =>
         product.title.toLowerCase().includes(query.toLowerCase())
-      
     );
     setFilteredProducts(filtered);
   };

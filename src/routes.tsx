@@ -10,7 +10,7 @@ interface Route {
 export const Routes = () => {
   const routes: Route[] = [
     { path: "/", element: <App /> },
-    { path: "/fas", element: <SingleProductView /> },
+    { path: "/product/:id", element: <SingleProductView /> },
   ];
   return useRoutes(routes);
 };

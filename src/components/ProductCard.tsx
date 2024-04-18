@@ -17,7 +17,7 @@ interface ProductCardProps {
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   return (
     <div className="card" key={product.id}>
-      <Link to='/products'>
+      <Link to={`/product/${product.id}`}>
         <img src={product.image} alt={product.title} />
       </Link>
       <h2>{product.title}</h2>
