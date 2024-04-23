@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { SingleProductStyles } from "./SingleProductView.styles.js";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const SingleProductView: React.FC = () => {
   const { id } = useParams<{ id: any }>();
@@ -33,14 +34,19 @@ const SingleProductView: React.FC = () => {
   return (
     <>
       <SingleProductStyles>
+        <Link to='/'><i className="fa-solid fa-left-long"></i></Link>
         {product.map((item) => (
-          <div key={item.id}>
+          <div className="mainBx" key={item.id}>
             <h1>Product</h1>
-            <img src={item.image} alt={item.title} />
-            <h1>{item.title}</h1>
-            <p>{item.description}</p>
-            <b>{item.price}</b>
-            <p>{item.category}</p>
+            <div>
+              <img src={item.image} alt={item.title} />
+              <section>
+                <h1>{item.title}</h1>
+                <p>{item.description}</p>
+                <b>{item.price}$</b>
+                <p>{item.category}</p>
+              </section>
+            </div>
           </div>
         ))}
       </SingleProductStyles>
